@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    // return view('welcome');
+    return view('home');
+})->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+    return view('admin.home');
+    // redirect()->route('dashboard');
+})->middleware('can:admin.home')->name('dashboard');
