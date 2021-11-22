@@ -22,3 +22,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.home');
     // redirect()->route('dashboard');
 })->middleware('can:admin.home')->name('dashboard');
+
+// Route::resource('product', [UserController::class, 'index']);

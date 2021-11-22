@@ -1,3 +1,4 @@
+@if ($shops)
     <!-- ========================= SECTION  ========================= -->
     <section class="section-name bg padding-y-sm">
         <div class="container">
@@ -6,23 +7,16 @@
             </header><!-- sect-heading -->
 
             <div class="slider-items-owl owl-carousel owl-theme">
-                {{-- @empty($empresas) --}}
-                    <li class="nav-item">
-                        <a class="nav-lin text-gray">No hay categorias</a>
-                    </li>
-                {{-- @else
-                    @foreach ($empresas as $empresa)
-                        <div class="item-slide">
-                            <figure class="box item-logo text-center">
-                                <a href="{{ route('company', $empresa->slug) }}"><img
-                                        src="/becomerce/images/icons/empresax2.png" class="mb-3"></a>
-                                <figcaption class="text-center border-top pt-3">{{ $empresa->razonsocial }}</figcaption>
-                            </figure> <!-- item-logo.// -->
-                        </div> <!-- col.// -->
-                    @endforeach
-                @endempty --}}
-
+                @foreach ($shops as $shop)
+                    <div class="item-slide">
+                        <figure class="box">
+                            <a href="{{ $shop->slug }}"><img src="{{ $shop->logo }}" class="mb-3 rounded-circle"></a>
+                            <figcaption class="text-center border-top pt-3">{{ $shop->shopname }}</figcaption>
+                        </figure> <!-- item-logo.// -->
+                    </div> <!-- col.// -->
+                @endforeach
             </div> <!-- row.// -->
         </div><!-- container // -->
     </section>
     <!-- ========================= SECTION  END// ========================= -->
+@endif

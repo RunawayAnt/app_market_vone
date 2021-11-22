@@ -2,10 +2,13 @@
 
 namespace App\View\Components;
 
+use App\Models\Shop;
 use Illuminate\View\Component;
 
 class Footer extends Component
 {
+    public $shops;
+
     /**
      * Create a new component instance.
      *
@@ -23,6 +26,8 @@ class Footer extends Component
      */
     public function render()
     {
+        $this->shops = Shop::all();
+
         return view('components.footer');
     }
 }

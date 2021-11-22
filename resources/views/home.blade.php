@@ -1,3 +1,9 @@
 @extends('layouts.market')
 
-@section('title','Inicio| Market App')
+@section('title','Market App')
+
+@section('content')
+
+    @livewire('product')
+
+@endsection

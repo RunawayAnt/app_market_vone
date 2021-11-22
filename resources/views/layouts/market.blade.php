@@ -8,17 +8,25 @@
 
     <title>@yield('title')</title>
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    
+    @section('plugins.Select2', true)
+    {{-- <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}" defer></script> --}}
+
     <!-- Bootstrap-ecomerce-->
     @include('layouts.links')
-
     @livewireStyles
 </head>
 
 <body>
 
+    <x-navigation />
+
     @yield('content')
 
-    <x-footer> </x-footer>
+    <x-footer />
 
     @livewireScripts
 
