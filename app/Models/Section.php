@@ -12,4 +12,10 @@ class Section extends Model
     protected $fillable = [
         'sname'
     ];
+
+    public function shop(){
+        //$shop = Shop::where('user_id',$this->id)->first();
+
+        return $this->hasOne('App\Models\Shop');
+    }
 }

@@ -62,4 +62,17 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function shop(){
+        //$shop = Shop::where('user_id',$this->id)->first();
+
+        return $this->hasOne('App\Models\Shop');
+    }
+
+
+    public function comment(){
+        //$shop = Shop::where('user_id',$this->id)->first();
+
+        return $this->hasMany('App\Models\Comment');
+    }
 }

@@ -12,4 +12,10 @@ class Category extends Model
     protected $fillable = [
         'cname','slug'
     ];
+
+    public function product(){
+        //$shop = Shop::where('user_id',$this->id)->first();
+
+        return $this->hasOne('App\Models\Product');
+    }
 }

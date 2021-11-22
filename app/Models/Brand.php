@@ -13,4 +13,9 @@ class Brand extends Model
         'bname','slug'
     ];
 
+    public function product(){
+        //$shop = Shop::where('user_id',$this->id)->first();
+
+        return $this->hasOne('App\Models\Product');
+    }
 }
