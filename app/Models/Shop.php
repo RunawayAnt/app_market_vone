@@ -29,6 +29,8 @@ class Shop extends Model
         return $this->hasOne('App\Models\Product');
     }
 
+   
+
     public function comments(){
         return $this->morphMany('App\Models\Comment','commentable');
     }

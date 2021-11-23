@@ -2,14 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Product;
-use App\Models\Shop;
 use Illuminate\View\Component;
 
-class Footer extends Component
+class BannersList extends Component
 {
-    public $shops;
-    public $sproducts;
     /**
      * Create a new component instance.
      *
@@ -27,9 +23,6 @@ class Footer extends Component
      */
     public function render()
     {
-        $this->shops = Shop::all();
-        $this->sproducts = Product::select()->where('shop_id','=','1')->count();
-
-        return view('components.footer');
+        return view('components.banners-list');
     }
 }

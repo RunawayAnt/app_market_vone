@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Shop\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,5 +24,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.home');
     // redirect()->route('dashboard');
 })->middleware('can:admin.home')->name('dashboard');
+
+//Rutas de contacto
+
+Route::view('contactanos','contact')->name('contact');
+
+//Rutas de productos
+
+Route::get('producto/{product}', [ProductController::class,'show']) -> name('product');
+
+//Rutas de tiendas
+
+Route::get('tiendas', [ShopController::class,'index']) -> name('shops');
+
+Route::get('tiendas/{shop}', [ShopController::class,'show']) -> name('shop');
 
 // Route::resource('product', [UserController::class, 'index']);

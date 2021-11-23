@@ -30,7 +30,7 @@
 <link href="{{ asset('bootstrap-ecomerce/css/ui.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('bootstrap-ecomerce/css/responsive.css') }}" rel="stylesheet" />
 
-@if (Route::is('home'))
+@if (Route::is('home') || Route::is('contact')|| Route::is('product'))
     <!-- ui javascript -->
     <script src="{{ asset('bootstrap-ecomerce/js/script.js') }}" type="text/javascript"></script>
 

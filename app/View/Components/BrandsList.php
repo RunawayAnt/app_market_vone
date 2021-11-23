@@ -2,14 +2,12 @@
 
 namespace App\View\Components;
 
-use App\Models\Product;
-use App\Models\Shop;
+use App\Models\Brand;
 use Illuminate\View\Component;
 
-class Footer extends Component
+class BrandsList extends Component
 {
-    public $shops;
-    public $sproducts;
+    public $brands;
     /**
      * Create a new component instance.
      *
@@ -17,7 +15,8 @@ class Footer extends Component
      */
     public function __construct()
     {
-        //
+        $this -> brands = Brand::all();
+
     }
 
     /**
@@ -27,9 +26,6 @@ class Footer extends Component
      */
     public function render()
     {
-        $this->shops = Shop::all();
-        $this->sproducts = Product::select()->where('shop_id','=','1')->count();
-
-        return view('components.footer');
+        return view('components.brands-list');
     }
 }

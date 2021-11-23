@@ -1,9 +1,21 @@
-@extends('layouts.market')
+@extends('layouts.layout')
 
-@section('title','Market App')
+@section('title', 'Market App')
 
 @section('content')
 
-    @livewire('product')
+    @include('layouts.bannershome')
+
+    <x-banners-list />
+
+    @livewire('products-section')
+
+    <x-banners-list />
+
+    <x-brands-list>
+        <x-slot name="title">
+            Marcas de nuestras tiendas
+        </x-slot>
+    </x-brands-list>
 
 @endsection

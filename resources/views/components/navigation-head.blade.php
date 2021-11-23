@@ -4,12 +4,13 @@
         <nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
             <ul class="navbar-nav   d-md-flex mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">Inicio</a>
+                    <a class="nav-link" href="{{ route('home') }}">Inicio</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="">Solo
                         hoy</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('shops') }}">Tiendas</a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Contacto</a>
+                    <a class="nav-link" href="{{ route('contact') }}">Contacto</a>
                 </li>
             </ul>
             <ul class="navbar-nav d-none  d-md-flex">
