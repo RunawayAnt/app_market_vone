@@ -1,18 +1,9 @@
 <div class="widgets-wrap float-md-right">
 
     {{-- cart shop --}}
-    <a href="#" class="widget-header mr-2">
-        <div class="icon">
-            <i class="icon-sm rounded-circle border fa fa-shopping-cart"></i>
-            <span class="notify">0</span>
-        </div>
-    </a>
-    {{-- <a href="#" class="widget-header mr-2">
-        <div class="icon">
-            <i class="icon-sm rounded-circle border fa fa-heart"></i>
-        </div>
-    </a> --}}
-
+    
+            @livewire('cart-total')
+         
 
     <div class="widget-header dropdown">
         @if (Route::has('login'))

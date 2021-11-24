@@ -34,22 +34,16 @@
                     <div class="form-row">
                         <div class="form-group col-md flex-grow-0">
                             <label>Cantidad</label>
-                            <div class="input-group mb-3 input-spinner">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-light" type="button" id="button-plus"> + </button>
-                                </div>
-                                <input type="text" class="form-control" value="1" disabled id="quantity"
-                                    style="background-color:white" max="{{ $product->stock }}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-light" type="button" id="button-minus"> &minus; </button>
-                                </div>
+                            <div class="input-group mb-3  ">
+                                 <input type="number" class="form-control" id="quantity" wire:model.defer="quantitycart">
                             </div>
                         </div> <!-- col.// -->
                     </div> <!-- row.// -->
 
                     <a href="#" class="btn  btn-warning btn-lg mb-2 mb-lg-0"> Comprar ahora </a>
-                    <a href="#" class="btn  btn-outline-warning btn-lg"> <span class="text">A&ntilde;adir al
-                            carrito</span> <i class="fas fa-shopping-cart"></i> </a>
+                    <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
+                            class="text">A&ntilde;adir al
+                            carrito</span> <i class="fas fa-shopping-cart"></i> </button>
                 </article> <!-- product-info-aside .// -->
             </main> <!-- col.// -->
         </div> <!-- row.// -->
@@ -140,26 +134,25 @@
     <!-- ========================= SECTION CONTENT END// ========================= -->
 
     <script>
-        const data = @json($features);
-        const features = document.getElementById('features');
-        const quantity = document.getElementById('quantity');
-        let index = 1;
-        let content = '';
-        let parsedata = JSON.parse(data);
-        for (const key in parsedata) {
-            features.innerHTML += '<dt class="col-sm-3">' + key + '</dt><dd class="col-sm-9">' + parsedata[key] + '</dd>';
-        }
-        document.getElementById('button-plus').onclick = function() {
-            if (index < parseInt(quantity.getAttribute('max'))) {
-                index += 1;
-                quantity.value = index;
-            }
-        }
-        document.getElementById('button-minus').onclick = function() {
-            if (index > 1) {
-                index -= 1;
-                quantity.value = index;
-            }
-        }
+        // // const data = @json($features);
+        // // const features = document.getElementById('features');
+        // const quantity = document.getElementById('quantity');
+        // let index = 1;
+        // // let parsedata = JSON.parse(data);
+        // // for (const key in parsedata) {
+        // //     features.innerHTML += '<dt class="col-sm-3">' + key + '</dt><dd class="col-sm-9">' + parsedata[key] + '</dd>';
+        // // }
+        // document.getElementById('button-plus').onclick = function() {
+        //     if (index < parseInt(quantity.getAttribute('max'))) {
+        //         index += 1;
+        //         quantity.value = index;
+        //     }
+        // }
+        // document.getElementById('button-minus').onclick = function() {
+        //     if (index > 1) {
+        //         index -= 1;
+        //         quantity.value = index;
+        //     }
+        // }
     </script>
 </div>

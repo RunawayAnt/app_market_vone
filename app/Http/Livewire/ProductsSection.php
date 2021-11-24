@@ -16,8 +16,6 @@ class ProductsSection extends Component
             ->limit(10)
             ->orderBy('id', 'asc')
             ->get();
-
-    
     }
 
     public function render()

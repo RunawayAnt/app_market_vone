@@ -34,9 +34,9 @@
                                 <a class="nav-lin text-gray">No hay categorias</a>
                             </li>
                         @endempty
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="">Todos</a>
-                        </li> --}}
+                        {{-- <- class="nav-item">
+                            <a class="nav-link" href="{{ route('categories') }}">Todos</a> 
+                        --}}
                         @foreach ($categories as $item)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ $item->slug }}">{{ $item->cname }}</a>

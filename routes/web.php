@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Shop\ShopController;
+use App\Http\Livewire\CartList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +41,4 @@ Route::get('tiendas', [ShopController::class,'index']) -> name('shops');
 
 Route::get('tiendas/{shop}', [ShopController::class,'show']) -> name('shop');
 
-// Route::resource('product', [UserController::class, 'index']);
+Route::get('productos/carrito', [CartController::class,'index'])->name('cart');
