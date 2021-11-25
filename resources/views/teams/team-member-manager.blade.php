@@ -1,4 +1,4 @@
-<div>
+{{-- <div>
     @if (Gate::check('addTeamMember', $team))
         <x-jet-section-border />
 
@@ -253,4 +253,4 @@
             </x-jet-danger-button>
         </x-slot>
     </x-jet-confirmation-modal>
-</div>
+</div> --}}

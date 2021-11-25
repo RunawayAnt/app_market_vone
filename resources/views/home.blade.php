@@ -14,7 +14,7 @@
 
     <x-brands-list>
         <x-slot name="title">
-            Marcas de nuestras tiendas
+            Nuestras tiendas utilizan..
         </x-slot>
     </x-brands-list>
 

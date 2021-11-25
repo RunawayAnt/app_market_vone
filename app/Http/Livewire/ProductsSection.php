@@ -10,9 +10,17 @@ class ProductsSection extends Component
 {
     public $newproducts;
 
+    public $offproducts;
+
     public function mount()
     {
         $this->newproducts = Product::select()
+            ->limit(10)
+            ->orderBy('id', 'asc')
+            ->get();
+
+        $this->offproducts = Product::select()
+        ->where('price','<',50)
             ->limit(10)
             ->orderBy('id', 'asc')
             ->get();

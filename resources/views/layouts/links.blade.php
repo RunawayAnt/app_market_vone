@@ -42,3 +42,4 @@
 {{-- <!-- Font awesome 5 -->
                 <link href="/becomerce/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet"> --}}
 {{-- <link href="/vendor/jquery-ui/jquery-ui.min.css" rel="stylesheet"> --}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

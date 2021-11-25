@@ -1,4 +1,4 @@
-<x-jet-form-section submit="updateTeamName">
+{{-- <x-jet-form-section submit="updateTeamName">
     <x-slot name="title">
         {{ __('Team Name') }}
     </x-slot>
@@ -47,4 +47,4 @@
             </x-jet-button>
         </x-slot>
     @endif
-</x-jet-form-section>
+</x-jet-form-section> --}}

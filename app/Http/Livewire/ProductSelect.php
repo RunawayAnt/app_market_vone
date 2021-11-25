@@ -43,6 +43,7 @@ class ProductSelect extends Component
         ]);
         $this -> reset('quantitycart');
         $this->emit('render');
+        $this -> emit('alert',$this -> product -> name);
         session()->flash('success', 'Product is Added to Cart Successfully !');
     }
 

@@ -1,4 +1,4 @@
-<x-jet-action-section>
+{{-- <x-jet-action-section>
     <x-slot name="title">
         {{ __('Delete Team') }}
     </x-slot>
@@ -39,4 +39,4 @@
             </x-slot>
         </x-jet-confirmation-modal>
     </x-slot>
-</x-jet-action-section>
+</x-jet-action-section> --}}

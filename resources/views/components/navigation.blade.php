@@ -1,7 +1,7 @@
 <header class="section-header">
     <x-navigation-head />
     <!-- header-nav .// -->
-    <section class="header-main border-bottom">
+    <section class="header-main bg-warning ">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 col-sm-4 col-12 text-center">
@@ -20,7 +20,7 @@
         </div> <!-- container.// -->
     </section> <!-- header-main .// -->
     <!-- header-main| profile - search.// -->
-    <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom bg-warning">
+    <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom bg-white">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
                 aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,9 +34,9 @@
                                 <a class="nav-lin text-gray">No hay categorias</a>
                             </li>
                         @endempty
-                        {{-- <- class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('categories') }}">Todos</a> 
-                        --}}
+                        </li>
                         @foreach ($categories as $item)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ $item->slug }}">{{ $item->cname }}</a>

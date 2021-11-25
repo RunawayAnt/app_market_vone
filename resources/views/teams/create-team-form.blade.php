@@ -1,4 +1,4 @@
-<x-jet-form-section submit="createTeam">
+{{-- <x-jet-form-section submit="createTeam">
     <x-slot name="title">
         {{ __('Team Details') }}
     </x-slot>
@@ -33,4 +33,4 @@
             {{ __('Create') }}
         </x-jet-button>
     </x-slot>
-</x-jet-form-section>
+</x-jet-form-section> --}}

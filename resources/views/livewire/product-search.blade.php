@@ -1,12 +1,8 @@
 <div>
-     <x-adminlte-input name="iSearch" placeholder="Buscar producto" igroup-size="lg" class="border-warning">
-        <x-slot name="appendSlot">
-            <x-adminlte-button theme="outline-warning" label="Go!" />
+     <x-adminlte-input name="iSearch" placeholder="Buscar producto" igroup-size="lg">
+        <x-slot name="appendSlot" >
+            <x-adminlte-button theme="outline-primary" label="Go!" class="text-white bg-primary" />
         </x-slot>
-        <x-slot name="prependSlot">
-            <div class="input-group-text text-white bg-warning">
-                <i class="fas fa-search"></i>
-            </div>
-        </x-slot>
+        <x-slot name="prependSlot"class="input-group-text"></x-slot>
     </x-adminlte-input>
 </div>
