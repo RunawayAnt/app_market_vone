@@ -16,8 +16,9 @@
 
                     <div class="rating-wrap my-3">
                         <x-product-rating :qualification="$qualification"></x-product-rating>
-                        <small class="label-rating text-success"> <i class="fa fa-box"></i> {{ $product->stock }} en 
-                        stock
+                        <small class="label-rating text-success"> <i class="fa fa-box"></i> {{ $product->stock }}
+                            en
+                            stock
                         </small>
                     </div> <!-- rating-wrap.// -->
                     <div class="mb-3">
@@ -34,21 +35,43 @@
                         <dt class="col-sm-3">sku</dt>
                         <dd class="col-sm-9">{{ $product->sku }}</dd>
                     </dl>
-                    <hr>
-                    <div class="form-row">
-                        <div class="form-group col-md flex-grow-0">
-                            <label>Cantidad</label>
-                            <div class="input-group mb-3  ">
-                                <input type="number" class="form-control" id="quantity"
-                                    wire:model.defer="quantitycart">
-                            </div>
-                        </div> <!-- col.// -->
-                    </div> <!-- row.// -->
+                    @auth
+                        @can('client.home')
+                            <hr>
+                            <div class="form-row">
+                                <div class="form-group col-md flex-grow-0">
+                                    <label>Cantidad</label>
+                                    <div class="input-group mb-3  ">
+                                        <input type="number" class="form-control" id="quantity"
+                                            wire:model.defer="quantitycart">
+                                    </div>
+                                </div> <!-- col.// -->
+                            </div> <!-- row.// -->
 
-                    <a href="#" class="btn  btn-warning btn-lg mb-2 mb-lg-0"> Comprar ahora </a>
-                    <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
-                            class="text">A&ntilde;adir al
-                            carrito</span> <i class="fas fa-shopping-cart"></i> </button>
+                            <a href="#" class="btn  btn-warning btn-lg mb-2 mb-lg-0"> Comprar ahora </a>
+                            <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
+                                    class="text">A&ntilde;adir al
+                                    carrito</span> <i class="fas fa-shopping-cart"></i> </button>
+
+                        @endcan
+                    @else
+                        <hr>
+                        <div class="form-row">
+                            <div class="form-group col-md flex-grow-0">
+                                <label>Cantidad</label>
+                                <div class="input-group mb-3  ">
+                                    <input type="number" class="form-control" id="quantity"
+                                        wire:model.defer="quantitycart">
+                                </div>
+                            </div> <!-- col.// -->
+                        </div> <!-- row.// -->
+
+                        <a href="#" class="btn  btn-warning btn-lg mb-2 mb-lg-0"> Comprar ahora </a>
+                        <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
+                                class="text">A&ntilde;adir al
+                                carrito</span> <i class="fas fa-shopping-cart"></i> </button>
+                    @endauth
+
                 </article> <!-- product-info-aside .// -->
             </main> <!-- col.// -->
         </div> <!-- row.// -->
@@ -122,7 +145,7 @@
                                         </div>
                                         <div class="info">
                                             <p class="font-weight-bold text-dark"><a
-                                                    href="">{{ $shop->shopname }}</a>
+                                                    href="{{ route  ('shop',$shop->slug) }}">{{ $shop->shopname }}</a>
                                             </p>
                                             <small>{{ $shop->phone }}</small>
                                         </div>

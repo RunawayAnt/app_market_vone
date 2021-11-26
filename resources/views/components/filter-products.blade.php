@@ -1,6 +1,6 @@
 <header class="border-bottom mb-4 pb-3">
     <div class="form-inline">
-        <span class="mr-md-auto">{{$count}} productos actualmente</span>
+        <span class="mr-md-auto">{{ $count }} productos actualmente</span>
         {{-- <select class="mr-2 form-control pr-4">
             <option>Latest items</option>
             <option>Trending</option>
@@ -28,7 +28,13 @@
                             {{-- <del class="price-old">$1980</del> --}}
                         </div> <!-- price-wrap.// -->
                     </div>
-                    @livewire('cart-additem', ['product' => $item], key($item->id))
+                    @auth
+                        @can('client.home')
+                            @livewire('cart-additem', ['product' => $item], key($item->id))
+                        @endcan
+                    @else
+                        @livewire('cart-additem', ['product' => $item], key($item->id))
+                    @endauth
                 </figcaption>
             </figure>
         </div> <!-- col.// -->
