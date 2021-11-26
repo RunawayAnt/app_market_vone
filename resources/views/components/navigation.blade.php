@@ -11,7 +11,10 @@
                 </div>
                 <div class="col-lg-4 col-xl-5 col-sm-8 col-12">
                     <!-- navigation search -->
-                    <x-navigation-search />
+                    {{-- <x-navigation-search /> --}}
+                    <div class="search">
+                        @livewire('product-search')
+                    </div>
                 </div> <!-- col.// -->
                 <div class="col-lg-5 col-xl-4 col-sm-12">
                     <x-navigation-profile />
@@ -20,7 +23,7 @@
         </div> <!-- container.// -->
     </section> <!-- header-main .// -->
     <!-- header-main| profile - search.// -->
-    <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom bg-white">
+    <nav class="navbar-main navbar-expand-lg navbar-light p-2 border-bottom bg-white">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
                 aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +38,7 @@
                             </li>
                         @endempty
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories') }}">Todos</a> 
+                            <a class="nav-link" href="{{ route('categories') }}">Todos</a>
                         </li>
                         @foreach ($categories as $item)
                             <li class="nav-item">

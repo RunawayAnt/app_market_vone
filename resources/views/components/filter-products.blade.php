@@ -18,7 +18,7 @@
                     {{-- <span class="badge badge-danger"> NEW </span> --}}
                     <img src="{{ $item->image }}">
                     <a class="btn-overlay" href="{{ route('product', $item->slug) }}"><i
-                            class="fa fa-search-plus"></i>Visualizar producto</a>
+                            class="far fa-eye mr-2"></i>Visualizar producto</a>
                 </div> <!-- img-wrap.// -->
                 <figcaption class="info-wrap">
                     <div class="fix-height">

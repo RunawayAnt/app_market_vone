@@ -60,7 +60,7 @@
                                 <a href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
                                     class="">
                                     <i class="icon-control fa fa-chevron-down"></i>
-                                    <h6 class="title text-gray">Rese&ntilde;as del producto</h6>
+                                    <h6 class="title text-gray">Rese&ntilde;as de la tienda</h6>
                                 </a>
                             </header>
                             <div>
