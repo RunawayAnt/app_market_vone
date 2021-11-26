@@ -8,7 +8,7 @@
 
                     <div class="col-12 col-lg-3">
                         <small> {{ $item->created_at }}</small>
-                        <ul class="rating-stars">
+                        {{-- <ul class="rating-stars">
                             <li style="" class="stars-active">
                                 @for ($i = 0; $i < $item->qualification; $i++)
                                     <i class="fa fa-star"></i>
@@ -20,7 +20,8 @@
                                 <i class="fa fa-star"></i>
                             </li>
                         </ul>
-                        <small>({{ $item->qualification }})</small>
+                        <small>({{ $item->qualification }})</small> --}}
+                        <x-product-rating :qualification="$item->qualification"></x-product-rating>
                     </div>
                     <div class="col m-3">
                         <div class="bg-white p-3">

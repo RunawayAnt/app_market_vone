@@ -14,8 +14,12 @@
 
                     <h2 class="title">{{ $product->name }}</h2>
 
-                    <x-product-rating :stock="$product->stock"></x-product-rating>
-
+                    <div class="rating-wrap my-3">
+                        <x-product-rating :qualification="$qualification"></x-product-rating>
+                        <small class="label-rating text-success"> <i class="fa fa-box"></i> {{ $product->stock }} en 
+                        stock
+                        </small>
+                    </div> <!-- rating-wrap.// -->
                     <div class="mb-3">
                         <var class="price h4">s/ {{ $product->price }}</var>
                         <span class="text-muted">/per kg</span>
@@ -78,11 +82,11 @@
                                                     @livewire('comment-create',['product' => $product])
                                                 @endcan
                                             @else
-                                                
+
                                                 <div class="bg-warning m-2 p-3 rounded">
                                                     <div class="row">
                                                         <div class="col text-white">
-                                                            ¿Aun no te has afiliado?. Solo debes 
+                                                            ¿Aun no te has afiliado?. Solo debes
                                                             <a href="{{ route('login') }}" class="text-primary">Iniciar
                                                                 Sesion </a> &oacute;
                                                             @if (Route::has('register'))

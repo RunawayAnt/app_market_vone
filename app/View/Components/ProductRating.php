@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class ProductRating extends Component
 {
-   public $stock;
+   public $qualification;
     /**
      * Create a new component instance.
      *
@@ -15,9 +15,9 @@ class ProductRating extends Component
 
 
 
-    public function __construct($stock)
+    public function __construct($qualification)
     {
-        $this -> stock = $stock;
+        $this -> qualification = intval($qualification);
     }
 
     /**

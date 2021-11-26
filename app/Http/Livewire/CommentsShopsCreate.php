@@ -6,9 +6,9 @@ use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class CommentCreate extends Component
+class CommentsShopsCreate extends Component
 {
-    public $product;
+    public $shop;
     public $user;
 
     public $comment;
@@ -19,17 +19,16 @@ class CommentCreate extends Component
         'calification' => 'required',
     ];
 
-    public function mount($product)
+    public function mount($shop)
     {
-        $this -> product = $product;
+        $this -> shop = $shop;
         $this -> user = Auth::user();
     }
 
     public function render()
     {
-        return view('livewire.comment-create');
+        return view('livewire.comments-shops-create');
     }
-
     public function sendComment()
     {
         $this->validate();
@@ -37,14 +36,13 @@ class CommentCreate extends Component
         Comment::create([
             'cmessage' => $this->comment,
             'qualification' => $this->calification,
-            'commentable_id' => $this->product -> id,
-            'commentable_type' => 'App\Models\Product',
+            'commentable_id' => $this-> shop -> id,
+            'commentable_type' => 'App\Models\Shop',
             'user_id' => $this->user -> id
         ]);
         $this->reset('comment', 'calification');
-        $this->emitTo('comments-users','activecomment');
+        $this->emitTo('comments-shops-list','activecommentshop');
         // $this->emitTo('comments-users-data','render');
 
     }
-
 }

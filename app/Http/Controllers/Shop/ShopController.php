@@ -51,12 +51,12 @@ class ShopController extends Controller
     public function show($slug)
     {
         $shop = Shop::where("slug", "=", $slug)->get()->first();
-
+        $qualification = $shop -> comments ->avg('qualification');
         $products = Product::where("shop_id", "=", $shop->id)->paginate(9);
         $count = Product::where("shop_id", "=", $shop->id)->count();
         $productsrecent = Product::where("shop_id", "=", $shop->id)->orderBy('id', 'desc')->limit(4)->get();
 
-        return view('shop.show', compact('shop', 'products', 'count','productsrecent'));
+        return view('shop.show', compact('shop', 'products', 'count','productsrecent','qualification'));
     }
 
     /**
