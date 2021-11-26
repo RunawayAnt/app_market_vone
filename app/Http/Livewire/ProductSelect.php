@@ -10,6 +10,7 @@ class ProductSelect extends Component
 
     public $product, $features, $shop, $brand, $category;
     public $quantitycart  = 1;
+    public $productcoments;
 
 
     public function mount($product)
@@ -19,6 +20,8 @@ class ProductSelect extends Component
         $this->shop = $product->shop;
         $this->brand = $product->brand;
         $this->category = $product->category;
+
+        $this->productcoments = $product;
 
     }
 

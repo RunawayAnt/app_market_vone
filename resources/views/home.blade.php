@@ -4,7 +4,9 @@
 
 @section('content')
 
-    @include('layouts.bannershome')
+    <x-banner-presentation></x-banner-presentation>
+
+    <x-features-presentation></x-features-presentation>
 
     <x-banners-list />
 

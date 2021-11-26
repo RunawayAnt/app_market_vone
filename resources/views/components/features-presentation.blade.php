@@ -1,23 +1,15 @@
-<section class="section-intro">
-
-    <div class="intro-banner-wrap">
-        <img src="https://via.placeholder.com/930x250.png/4682B4?text=banners+fixed" class="w-100 img-fluid">
-    </div>
-
-</section>
-
 <section class="section-specials padding-y border-bottom">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <figure class="itemside">
                     <div class="aside">
-                        <span class="icon-sm rounded-circle bg-primary">
-                            <i class="fa fa-money-bill-alt white"></i>
+                        <span class="icon-sm">
+                            <i class="far fa-money-bill-alt text-warning fa-2x"></i>
                         </span>
                     </div>
                     <figcaption class="info">
-                        <h6 class="title">Reasonable prices</h6>
+                        <h6 class="title">Precios Razonables</h6>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod
                             tempor incididunt ut labor </p>
@@ -27,12 +19,12 @@
             <div class="col-md-4">
                 <figure class="itemside">
                     <div class="aside">
-                        <span class="icon-sm rounded-circle bg-danger">
-                            <i class="fa fa-comment-dots white"></i>
+                        <span class="icon-sm">
+                            <i class="far fa-comment-dots text-warning fa-2x"></i>
                         </span>
                     </div>
                     <figcaption class="info">
-                        <h6 class="title">Customer support 24/7 </h6>
+                        <h6 class="title">Atención al cliente 24/7</h6>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod
                             tempor incididunt ut labor </p>
@@ -42,12 +34,12 @@
             <div class="col-md-4">
                 <figure class="itemside">
                     <div class="aside">
-                        <span class="icon-sm rounded-circle bg-success">
-                            <i class="fa fa-truck white"></i>
+                        <span class="icon-sm">
+                            <i class="far fa-smile-beam text-warning fa-2x"></i>
                         </span>
                     </div>
                     <figcaption class="info">
-                        <h6 class="title">Quick delivery</h6>
+                        <h6 class="title">Apoyo comercial</h6>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod
                             tempor incididunt ut labor </p>

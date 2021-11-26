@@ -9,6 +9,8 @@
     <title>@yield('title')</title>
 
     @section('plugins.Select2', true)
+    {{-- @section('plugins.BootstrapSlider', true) --}}
+
     {{-- <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script> --}}
 

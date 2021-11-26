@@ -35,7 +35,8 @@
                         <div class="form-group col-md flex-grow-0">
                             <label>Cantidad</label>
                             <div class="input-group mb-3  ">
-                                 <input type="number" class="form-control" id="quantity" wire:model.defer="quantitycart">
+                                <input type="number" class="form-control" id="quantity"
+                                    wire:model.defer="quantitycart">
                             </div>
                         </div> <!-- col.// -->
                     </div> <!-- row.// -->
@@ -58,16 +59,48 @@
                 <aside class="col-md-8 mb-lg-4">
                     <!-- ============================ COMPONENT 1 ================================= -->
                     <div class="list-group">
-                        <article class="list-group-item">
+                        <article class="list-group-item bg-white">
                             <header class="filter-header">
                                 <a href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true"
                                     class="">
                                     <i class="icon-control fa fa-chevron-down"></i>
-                                    <h6 class="title">Some heading </h6>
+                                    <h6 class="title text-gray">Rese&ntilde;as del producto</h6>
                                 </a>
                             </header>
-                            @livewire('product-comments')
-
+                            <div>
+                                {{-- <div class="filter-content collapse overflow-auto" id="collapse2" style=""> --}}
+                                <div class="filter-content collapse show" id="collapse1" style="">
+                                    <div class="row">
+                                        {{-- form comentario --}}
+                                        <div class="col-12">
+                                            @auth
+                                                @can('client.home')
+                                                    @livewire('comment-create',['product' => $product])
+                                                @endcan
+                                            @else
+                                                
+                                                <div class="bg-warning m-2 p-3 rounded">
+                                                    <div class="row">
+                                                        <div class="col text-white">
+                                                            ¿Aun no te has afiliado?. Solo debes 
+                                                            <a href="{{ route('login') }}" class="text-primary">Iniciar
+                                                                Sesion </a> &oacute;
+                                                            @if (Route::has('register'))
+                                                                <a href="{{ route('register') }}"
+                                                                    class="text-primary">Registrarse</a>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endauth
+                                        </div>
+                                        {{-- lista-comentarios --}}
+                                        <div class="col-12">
+                                            @livewire('comments-users',['product' => $product])
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
 
                     </div> <!-- list-group.// -->

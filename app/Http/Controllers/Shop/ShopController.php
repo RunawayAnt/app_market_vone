@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class ShopController extends Controller
     {
         $shops = Shop::all();
 
-        return view('shop.index',compact('shops'));
+        return view('shop.index', compact('shops'));
     }
 
     /**
@@ -49,9 +50,13 @@ class ShopController extends Controller
      */
     public function show($slug)
     {
-        $shop = Shop::where("slug","=",$slug)->get()->first();
+        $shop = Shop::where("slug", "=", $slug)->get()->first();
 
-        return view('shop.show',compact('shop'));
+        $products = Product::where("shop_id", "=", $shop->id)->paginate(9);
+        $count = Product::where("shop_id", "=", $shop->id)->count();
+        $productsrecent = Product::where("shop_id", "=", $shop->id)->orderBy('id', 'desc')->limit(4)->get();
+
+        return view('shop.show', compact('shop', 'products', 'count','productsrecent'));
     }
 
     /**

@@ -9,6 +9,10 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'cmessage', 'qualification', 'commentable_id', 'commentable_type', 'user_id'
+    ];
+
     //relacion de uno a muchos polimorfica
     public function commentable(){
         return $this->morphTo();
