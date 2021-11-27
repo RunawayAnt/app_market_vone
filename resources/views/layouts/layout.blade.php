@@ -8,16 +8,14 @@
 
     <title>@yield('title')</title>
 
-    @section('plugins.Select2', true)
-    {{-- @section('plugins.BootstrapSlider', true) --}}
-
-    {{-- <!-- Scripts --> --}}
-    <script src="{{ mix('js/app.js') }}" defer></script>
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     <!-- Bootstrap-ecomerce-->
-    @include('layouts.links')
+    @include('layouts.bootstrap_ecomerce')
+
+    <!-- Scripts-->
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     @livewireStyles
 </head>
@@ -31,6 +29,7 @@
     <x-footer />
 
     @stack('modals')
+
     @livewireScripts
 
     <script>

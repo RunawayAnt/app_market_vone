@@ -17,13 +17,12 @@ class CreateProfilesTable extends Migration
             $table->id();
             $table->string('names');
             $table->string('lastnames');
-            // $table->string('typedocument');
             $table->string('dni');
-            // $table->string('province');
-            // $table->string('district');
-            $table->string('address');
+
+            $table->string('district'); //tambo de mora ..chincha b
+            $table->string('default_shipping_address');
+            $table->string('billing_address'); //extra
             $table->string('phone');
-            // $table->string('email')->nullable();
 
             $table->unsignedBigInteger('user_id')->unique();
 

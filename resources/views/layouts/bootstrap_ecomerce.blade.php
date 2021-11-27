@@ -39,7 +39,8 @@
 @endif
 
 {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
-{{-- <!-- Font awesome 5 -->
-                <link href="/becomerce/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet"> --}}
+{{-- <!-- Font awesome 5 --><link href="/becomerce/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet"> --}}
 {{-- <link href="/vendor/jquery-ui/jquery-ui.min.css" rel="stylesheet"> --}}
+
+{{--    CDNS    --}}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

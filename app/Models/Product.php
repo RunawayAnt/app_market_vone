@@ -31,4 +31,8 @@ class Product extends Model
     public function comments(){
         return $this->morphMany('App\Models\Comment','commentable');
     }
+
+    public function orders(){
+        return $this->belongsToMany('App\Model\Order');
+    }
 }
