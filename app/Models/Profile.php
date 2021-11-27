@@ -12,13 +12,9 @@ class Profile extends Model
     protected $fillable = [
         'names',
         'lastnames',
-        'typedocument',
-        'document',
-        'province',
-        'district',
+        'dni',
         'address',
         'phone',
-        'email',
         'user_id'
     ];
 

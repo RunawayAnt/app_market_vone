@@ -33,8 +33,17 @@
                                     @endcan
 
                                     <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                        {{ __('Mi perfil') }}
+                                        {{ __('Mi cuenta') }}
                                     </x-jet-dropdown-link>
+
+
+                                    @can('client.home')
+                                        {{-- <a class="dropdown-item" href="{{ url('/dashboard') }}">Dashboard</a> --}}
+                                        <x-jet-dropdown-link href="{{ route('client.profile') }}">
+                                            {{ __('Datos Personales') }}
+                                        </x-jet-dropdown-link>
+                                    @endcan
+
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
 

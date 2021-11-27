@@ -11,12 +11,11 @@
     @section('plugins.Select2', true)
     {{-- @section('plugins.BootstrapSlider', true) --}}
 
-    {{-- <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script> --}}
+    {{-- <!-- Scripts --> --}}
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
     <!-- Bootstrap-ecomerce-->
     @include('layouts.links')
 
@@ -31,6 +30,7 @@
 
     <x-footer />
 
+    @stack('modals')
     @livewireScripts
 
     <script>
@@ -49,9 +49,17 @@
 
             Toast.fire({
                 icon: 'success',
-                title: 'Producto "'+message+'" añadido al carrito.'
+                title: 'Producto "' + message + '" añadido al carrito.'
             })
-         });
+        });
+
+        Livewire.on('saveDataUser', function(message) {
+            Swal.fire(
+                message.title,
+                'Gracias por registrar sus datos, ahora puede comenzar a comprar',
+                'success'
+            )
+        });
     </script>
 </body>
 

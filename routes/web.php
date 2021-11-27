@@ -3,6 +3,7 @@
 use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Shop\ShopController;
 use App\Http\Livewire\CartList;
 use App\Http\Livewire\CategoryList;
@@ -48,4 +49,9 @@ Route::get('productos/carrito', [CartController::class,'index'])->name('cart');
 //Rutas categorias
 
 Route::get('categorias', [CategoryController::class,'index'])->name('categories');
+
+//Cliente
+
+Route::get('usuario/datos-personales',[ProfileController::class, 'index'])->middleware('can:client.home') -> name('client.profile');
+
 
