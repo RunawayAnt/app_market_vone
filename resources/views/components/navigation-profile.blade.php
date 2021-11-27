@@ -40,7 +40,7 @@
                                     @can('client.home')
                                         {{-- <a class="dropdown-item" href="{{ url('/dashboard') }}">Dashboard</a> --}}
                                         <x-jet-dropdown-link href="{{ route('client.profile') }}">
-                                            {{ __('Datos Personales') }}
+                                            {{ __('Ajustes de compra') }}
                                         </x-jet-dropdown-link>
                                     @endcan
 

@@ -13,7 +13,9 @@ class Profile extends Model
         'names',
         'lastnames',
         'dni',
-        'address',
+        'district',
+        'default_shipping_address',
+        'billing_address',
         'phone',
         'user_id'
     ];

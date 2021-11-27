@@ -17,12 +17,12 @@ class ShowPurchaseData extends Component
     public function mount()
     {
         $this -> user = Auth::user()->id;
-        $this -> datapurchase = User::find($this -> user)->profile;
+        $this -> datapurchase = User::find($this -> user)-> profile;
     }
 
     public function render()
     {
-        $this -> datapurchase -> profile;
+        $this -> datapurchase;
         return view('livewire.show-purchase-data');
     }
 }

@@ -11,14 +11,31 @@ class UpdatePurchaseData extends Component
 
     public $opentwo = false;
 
-    public $names, $lastnames,  $dni, $phone, $address;
+    public $names, $lastnames,  $dni, $phone, $district, $shippingaddress, $billingaddress;
+
+    public $districtselect = [
+        'Alto Laran',
+        'El Carmen',
+        'Chavin',
+        'Chincha Alta',
+        'Chincha Baja',
+        'Grocio Prado',
+        'Pueblo Nuevo',
+        'San Juan de Yanac',
+        'San Pedro de Huacarpana',
+        'Sunampe',
+        'Tambo de Mora'
+    ];
+
 
     protected $rules = [
         'names' => 'required',
         'lastnames' => 'required',
         'dni' => 'required|max:9|alpha_num',
         'phone' => 'required|regex:/^(\+51)[0-9]{9}$/',
-        'address' => 'required'
+        'district' => 'required',
+        'shippingaddress' => 'required|min:10',
+        'billingaddress' => 'required|min:10',
     ];
 
     public function mount($datapurchase)
@@ -29,7 +46,10 @@ class UpdatePurchaseData extends Component
         $this->lastnames = $datapurchase->lastnames;
         $this->dni = $datapurchase->dni;
         $this->phone = $datapurchase->phone;
-        $this->address = $datapurchase->address;
+        $this->district = $datapurchase->district;
+        $this->shippingaddress = $datapurchase->default_shipping_address;
+        $this->billingaddress = $datapurchase->billing_address;
+
     }
 
     public function updateData()
@@ -41,7 +61,9 @@ class UpdatePurchaseData extends Component
             'lastnames' => $this->lastnames,
             'dni' => $this->dni,
             'phone' => $this->phone,
-            'address' => $this->address,
+            'district' => $this->district,
+            'default_shipping_address' => $this->shippingaddress,
+            'billing_address' => $this->billingaddress,
             'user_id' => $this->datapurchase->user_id
         ]);
 
