@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Mis compras | Market App')
+@section('title', 'Mis carrito | Market App')
 
 @section('content')
 

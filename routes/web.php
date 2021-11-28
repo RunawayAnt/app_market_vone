@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Order\OrderController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Shop\ShopController;
@@ -32,26 +33,28 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Rutas de contacto
 
-Route::view('contactanos','contact')->name('contact');
+Route::view('contactanos', 'contact')->name('contact');
 
 //Rutas de productos
 
-Route::get('producto/{product}', [ProductController::class,'show']) -> name('product');
+Route::get('producto/{product}', [ProductController::class, 'show'])->name('product');
 
 //Rutas de tiendas
 
-Route::get('tiendas', [ShopController::class,'index']) -> name('shops');
+Route::get('tiendas', [ShopController::class, 'index'])->name('shops');
 
-Route::get('tiendas/{shop}', [ShopController::class,'show']) -> name('shop');
+Route::get('tiendas/{shop}', [ShopController::class, 'show'])->name('shop');
 
-Route::get('productos/carrito', [CartController::class,'index'])->middleware('can:client.home') ->name('cart');
+Route::get('productos/carrito', [CartController::class, 'index'])->name('cart');
 
 //Rutas categorias
 
-Route::get('categorias', [CategoryController::class,'index'])->name('categories');
+Route::get('categorias', [CategoryController::class, 'index'])->name('categories');
 
 //Cliente
 
-Route::get('usuario/datos-personales',[ProfileController::class, 'index'])->middleware('can:client.home') -> name('client.profile');
+Route::get('usuario/datos-personales', [ProfileController::class, 'index'])->middleware('can:client.home')->name('client.profile');
 
+Route::get('order/comprobar-datos', [OrderController::class, 'index'])->middleware('can:client.order')->name('client.order');
 
+// Route::get('order/pago-producto/{request}', [OrderController::class, 'show'])->middleware('can:client.order')->name('client.order.delivery');

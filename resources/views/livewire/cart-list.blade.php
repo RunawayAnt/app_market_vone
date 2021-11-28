@@ -53,7 +53,7 @@
                      @auth
                          @can('client.home')
                              @if (Cart::getSubTotal() > 0)
-                                 <a href="#" class="btn btn-primary float-md-right"> Realizar compra <i
+                                 <a href="{{ route('client.order') }}" class="btn btn-primary float-md-right"> Realizar compra <i
                                          class="fa fa-chevron-right"></i>
                                  </a>
 
