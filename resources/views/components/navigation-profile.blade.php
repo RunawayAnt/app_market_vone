@@ -27,7 +27,7 @@
                                 <div class="dropdown-menu dropdown-menu-right mt-2">
                                     @can('admin.home')
                                         {{-- <a class="dropdown-item" href="{{ url('/dashboard') }}">Dashboard</a> --}}
-                                        <x-jet-dropdown-link href="{{ url('/dashboard') }}">
+                                        <x-jet-dropdown-link href="{{ route('admin.index') }}">
                                             {{ __('Dashboard') }}
                                         </x-jet-dropdown-link>
                                     @endcan

@@ -129,7 +129,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-warning navbar-light',
+    'classes_topnav' => 'navbar-light navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -237,16 +237,12 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',           // Placeholder for the underlying input.
-            'id'   => 'sidebarMenuSearch' // ID attribute for the underlying input (optional).
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',           // Placeholder for the underlying input.
+        //     'id'   => 'sidebarMenuSearch' // ID attribute for the underlying input (optional).
+        // ],
+
         // [
         //     'text'        => 'pages',
         //     'url'         => 'admin/pages',
@@ -254,10 +250,17 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
-        ['header' => 'AJUSTES DE USUARIO'],
         [
-            'text' => 'Roles',
-            'url'  => 'admin/settings',
+            'text' => 'Dashboard',
+            'route'  => 'admin.index',
+            'icon' => 'fas fa-tachometer-alt',
+        ],
+
+        ['header' => 'ADMINISTRAR'],
+
+        [
+            'text' => 'Usuarios',
+            'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-users',
         ],
         // [
@@ -388,25 +391,27 @@ return [
             ],
         ],
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/css/dataTables.bootstrap4.min.css',
                 ],
             ],
+             
         ],
+
         // 'Select2' => [
         //     'active' => false,
         //     'files' => [
@@ -442,11 +447,17 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'asset' => true,
+                    'location' => 'vendor/sweetalert2/sweetalert2.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css',
                 ],
             ],
         ],
+
         'Pace' => [
             'active' => false,
             'files' => [
@@ -509,5 +520,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

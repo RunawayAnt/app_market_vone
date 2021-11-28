@@ -44,7 +44,7 @@ Route::get('tiendas', [ShopController::class,'index']) -> name('shops');
 
 Route::get('tiendas/{shop}', [ShopController::class,'show']) -> name('shop');
 
-Route::get('productos/carrito', [CartController::class,'index'])->name('cart');
+Route::get('productos/carrito', [CartController::class,'index'])->middleware('can:client.home') ->name('cart');
 
 //Rutas categorias
 
