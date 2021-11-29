@@ -23,7 +23,7 @@
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
         <div class="container">
-            @livewire('category-list', ['id'=> $id])
+            @livewire('category-list', ['id'=> $id, 'type' => $type])
         </div> <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->

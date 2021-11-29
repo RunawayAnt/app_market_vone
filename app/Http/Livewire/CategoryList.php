@@ -10,15 +10,20 @@ use Livewire\Component;
 class CategoryList extends Component
 {
     public $products;
-
+    public $count;
     public $search;
     public $sort = 'id';
     public $order = 'desc';
 
 
-    public function mount($id)
+    public function mount($id, $type)
     {
-        $this->products = Product::where('category_id',$id)->get();
+        if ($type == 'category') {
+            $this->products = Product::where('category_id',$id)->get();
+        }else{
+            $this->products = Product::where('brand_id',$id)->get();
+        }
+
         $this->brands = Brand::all();
         $this->categories = Category::all();
 

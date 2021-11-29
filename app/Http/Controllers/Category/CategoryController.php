@@ -19,7 +19,9 @@ class CategoryController extends Controller
 
         $title = 'Todos las categorias';
         $id = 1;
-        return view('category.index', compact('title', 'id'));
+        $type = 'category';
+
+        return view('category.index', compact('title', 'id', 'type'));
     }
 
 
@@ -27,11 +29,12 @@ class CategoryController extends Controller
     {
 
         $brand = Brand::where('slug', $slug)->first();
-        $id = 1;
+        $id = $brand->id;
+        $type = 'brand';
 
         $title = $brand->bname;
 
-        return view('category.index', compact('title', 'id'));
+        return view('category.index', compact('title', 'id', 'type'));
     }
 
     /**
@@ -46,9 +49,10 @@ class CategoryController extends Controller
 
         $category = Category::where('slug', $slug)->first();
         $id = $category->id;
+        $type = 'category';
         $title = $category->cname;
 
-        return view('category.index', compact('title', 'id'));
+        return view('category.index', compact('title', 'id', 'type'));
     }
 
     /**

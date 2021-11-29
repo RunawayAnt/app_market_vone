@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="pb-3">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar producto"
+                                <input type="text" class="form-control" placeholder="Nombre o precio"
                                     wire:model='search'>
                                 <div class="input-group-append">
                                     <button class="btn btn-warning" wire:click="search"><i class="fa fa-search"></i></button>
@@ -79,7 +79,7 @@
                     </div> <!-- col.// -->
                 @endforeach
             @else
-                <h6 class="title">No hay resultados para "{{ $search }}".</h6>
+                <h6 class="title mx-5 my-5">No se encontraron resultados.</h6>
             @endif
 
         </div> <!-- row end.// -->
