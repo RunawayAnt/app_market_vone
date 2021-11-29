@@ -17,14 +17,16 @@
                                 <input type="text" class="form-control" placeholder="Buscar producto"
                                     wire:model='search'>
                                 <div class="input-group-append">
-                                    <div class="btn btn-light"><i class="fa fa-search"></i></div>
+                                    <button class="btn btn-warning" wire:click="search"><i class="fa fa-search"></i></button>
                                 </div>
                             </div>
                         </div>
 
-                        <ul class="list-menu">
-                            <li><a href="#">People </a></li>
-                        </ul>
+                        @foreach ($categories as $category)
+                            <ul class="list-menu">
+                                <li><a href="{{ route('categories.category', $category->slug) }}">{{ $category->cname }} </a></li>
+                            </ul>
+                        @endforeach
 
                     </div> <!-- card-body.// -->
                 </div>
@@ -34,24 +36,17 @@
                     <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true"
                         class="">
                         <i class="icon-control fa fa-chevron-down"></i>
-                        <h6 class="title">Brands </h6>
+                        <h6 class="title">Marcas </h6>
                     </a>
                 </header>
                 <div class="filter-content collapse show" id="collapse_2" style="">
-                    {{-- <div class="card-body">
+                    <div class="card-body">
                         @foreach ($brands as $brand)
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" wire:model="activeBrand"
-                                    id="{{ $brand->id }}">
-                                {{ $activeBrand }}
-                                <div class="custom-control-label">{{ $brand->bname }}
-                                    <b class="badge badge-pill badge-light float-right">0</b>
-                                </div>
-                            </label>
+                            <ul class="list-menu">
+                                <li><a href="{{ route('brands.band', $brand->slug) }}">{{ $brand->bname }} </a></li>
+                            </ul>
                         @endforeach
-
-
-                    </div> <!-- card-body.// --> --}}
+                    </div> <!-- card-body.// -->
                 </div>
             </article> <!-- filter-group .// -->
 

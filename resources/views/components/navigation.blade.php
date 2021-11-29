@@ -42,7 +42,7 @@
                         </li>
                         @foreach ($categories as $item)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ $item->slug }}">{{ $item->cname }}</a>
+                                <a class="nav-link" href="{{ route('categories.category', $item->slug) }}">{{ $item->cname }}</a>
                             </li>
                         @endforeach
                     </ul>

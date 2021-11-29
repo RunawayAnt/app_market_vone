@@ -6,16 +6,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">Inicio</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="">Solo hoy</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="">Solo hoy</a></li> --}}
                 <li class="nav-item"><a class="nav-link" href="{{ route('shops') }}">Tiendas</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">Contacto</a>
                 </li>
             </ul>
-            <ul class="navbar-nav d-none  d-md-flex">
+            {{-- <ul class="navbar-nav d-none  d-md-flex">
                 <li class="nav-item"><a href="#" class="nav-link"> Delivery </a></li>
                 <li class="nav-item"><a href="#" class="nav-link"> Ayuda </a></li>
-            </ul> <!-- navbar-nav.// -->
+            </ul> <!-- navbar-nav.// --> --}}
         </nav>
     </div>
 </section>

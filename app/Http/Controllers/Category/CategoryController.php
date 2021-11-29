@@ -17,20 +17,21 @@ class CategoryController extends Controller
     public function index()
     {
 
-       $title = 'Todos las categorias';
-
-        return view('category.index', compact('title'));
+        $title = 'Todos las categorias';
+        $id = 1;
+        return view('category.index', compact('title', 'id'));
     }
 
 
     public function store($slug)
     {
 
-        $brand = Brand::where('slug',$slug)->first();
+        $brand = Brand::where('slug', $slug)->first();
+        $id = 1;
 
         $title = $brand->bname;
 
-        return view('category.index', compact('title'));
+        return view('category.index', compact('title', 'id'));
     }
 
     /**
@@ -41,14 +42,13 @@ class CategoryController extends Controller
      */
     public function show($slug)
     {
- 
 
-        $category = Category::where('slug',$slug)->first();
 
-        $title = $category ->cname;
+        $category = Category::where('slug', $slug)->first();
+        $id = $category->id;
+        $title = $category->cname;
 
-        return view('category.index', compact('title'));
-
+        return view('category.index', compact('title', 'id'));
     }
 
     /**
