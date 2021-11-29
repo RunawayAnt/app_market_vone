@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Category;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,28 +16,22 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category.index');
+
+       $title = 'Todos las categorias';
+
+        return view('category.index', compact('title'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store($slug)
     {
-        //
+
+        $category = Category::where('slug',$slug)->get();
+
+        $title = $category ->cname;
+
+        return view('category.index', compact('title'));
+
     }
 
     /**
@@ -44,9 +40,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $brand = Brand::where('slug',$slug)->get();
+
+        $title = $brand -> bname;
+
+        return view('category.index', compact('title'));
+
     }
 
     /**

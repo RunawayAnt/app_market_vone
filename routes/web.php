@@ -51,7 +51,10 @@ Route::get('productos/carrito', [CartController::class, 'index'])->name('cart');
 
 Route::get('categorias', [CategoryController::class, 'index'])->name('categories');
 
-Route::get('categorias', [CategoryController::class, 'index'])->name('categories');
+Route::get('categorias/{category}', [CategoryController::class, 'show'])->name('categories.category');
+
+Route::get('brands/{brand}', [CategoryController::class, 'store'])->name('brands.band');
+
 
 
 //Cliente
