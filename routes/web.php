@@ -51,6 +51,9 @@ Route::get('productos/carrito', [CartController::class, 'index'])->name('cart');
 
 Route::get('categorias', [CategoryController::class, 'index'])->name('categories');
 
+Route::get('categorias', [CategoryController::class, 'index'])->name('categories');
+
+
 //Cliente
 
 Route::get('usuario/datos-personales', [ProfileController::class, 'index'])->middleware('can:client.home')->name('client.profile');
