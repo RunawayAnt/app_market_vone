@@ -6,7 +6,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-sm-4 col-12 text-center">
                     <div class="brand-wrap">
-                        <img class="logo w-44" src="{{ asset('bootstrap-ecomerce/images/logo/logolarge.png') }}">
+                        <img class="logo" src="{{ asset('bootstrap-ecomerce/images/logo/logolarge.png') }}">
                     </div> <!-- brand-wrap.// -->
                 </div>
                 <div class="col-lg-4 col-xl-5 col-sm-8 col-12">

@@ -45,9 +45,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b> MGo!',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>Admin</b>',
+    'logo_img' => 'bootstrap-ecomerce/images/logo/logo.png',
+    'logo_img_class' => 'brand-image img-circle ml-2',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin MGO!',
