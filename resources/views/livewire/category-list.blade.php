@@ -55,7 +55,10 @@
     </aside> <!-- col.// -->
     <main class="col-md-9">
 
-        <div class="row">
+        <x-filter-products :products='$products' :count='$count'></x-filter-products>
+
+
+        {{-- <div class="row">
 
             @if ($products->count())
                 @foreach ($products as $item)
@@ -82,7 +85,7 @@
                 <h6 class="title mx-5 my-5">No se encontraron resultados.</h6>
             @endif
 
-        </div> <!-- row end.// -->
+        </div> <!-- row end.// --> --}}
 
     </main> <!-- col.// -->
 

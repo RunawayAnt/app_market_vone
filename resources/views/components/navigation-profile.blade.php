@@ -42,6 +42,10 @@
                                         <x-jet-dropdown-link href="{{ route('client.profile') }}">
                                             {{ __('Ajustes de compra') }}
                                         </x-jet-dropdown-link>
+
+                                        <x-jet-dropdown-link href="{{ route('client.history') }}">
+                                            {{ __('Lista de compras') }}
+                                        </x-jet-dropdown-link>
                                     @endcan
 
                                     <form method="POST" action="{{ route('logout') }}">

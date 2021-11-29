@@ -40,8 +40,8 @@
         </div> <!-- col.// -->
     @endforeach
 
-    <div class="text-center m-4">
+    {{-- <div class="text-center m-4">
         {!! $products !!}
-    </div>
+    </div> --}}
 
 </div> <!-- row end.// -->

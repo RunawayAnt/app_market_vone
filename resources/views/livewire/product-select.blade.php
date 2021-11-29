@@ -42,14 +42,13 @@
                                 <div class="form-group col-md flex-grow-0">
                                     <label>Cantidad</label>
                                     <div class="input-group mb-3  ">
-                                        <input type="number" class="form-control" id="quantity"
+                                        <input type="number" class="form-control" id="quantity" min="1" max="{{ $product->stock }}"
                                             wire:model.defer="quantitycart">
                                     </div>
                                 </div> <!-- col.// -->
                             </div> <!-- row.// -->
 
-                            <a href="#" class="btn  btn-warning btn-lg mb-2 mb-lg-0"> Comprar ahora </a>
-                            <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
+                             <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
                                     class="text">A&ntilde;adir al
                                     carrito</span> <i class="fas fa-shopping-cart"></i> </button>
 
@@ -60,14 +59,13 @@
                             <div class="form-group col-md flex-grow-0">
                                 <label>Cantidad</label>
                                 <div class="input-group mb-3  ">
-                                    <input type="number" class="form-control" id="quantity"
+                                    <input type="number" class="form-control" id="quantity" min="1" max="{{ $product->stock }}"
                                         wire:model.defer="quantitycart">
                                 </div>
                             </div> <!-- col.// -->
                         </div> <!-- row.// -->
 
-                        <a href="#" class="btn  btn-warning btn-lg mb-2 mb-lg-0"> Comprar ahora </a>
-                        <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
+                         <button type="button" class="btn  btn-outline-warning btn-lg" wire:click="addProduct"> <span
                                 class="text">A&ntilde;adir al
                                 carrito</span> <i class="fas fa-shopping-cart"></i> </button>
                     @endauth

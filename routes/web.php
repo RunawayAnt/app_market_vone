@@ -56,10 +56,11 @@ Route::get('categorias/{category}', [CategoryController::class, 'show'])->name('
 Route::get('brands/{brand}', [CategoryController::class, 'store'])->name('brands.band');
 
 
-
 //Cliente
 
 Route::get('usuario/datos-personales', [ProfileController::class, 'index'])->middleware('can:client.home')->name('client.profile');
+
+Route::get('usuario/datos-history', [ProfileController::class, 'show'])->middleware('can:client.home')->name('client.history');
 
 
 Route::get('order/comprobar-datos', [OrderController::class, 'index'])->middleware('can:client.order')->name('client.order');

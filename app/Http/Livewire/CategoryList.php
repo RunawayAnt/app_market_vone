@@ -10,7 +10,7 @@ use Livewire\Component;
 class CategoryList extends Component
 {
     public $products;
-    public $count;
+    public $count = '';
     public $search;
     public $sort = 'id';
     public $order = 'desc';

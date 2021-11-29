@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-6 gap-4">
-                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                         <label for="region" class="block text-sm font-medium text-gray-700">Distrito
                             <span class="text-red-500">*</span>
                         </label>
@@ -73,7 +73,7 @@
                         </select>
                         <x-jet-input-error for="district" />
                     </div>
-                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                         <label for="region" class="block text-sm font-medium text-gray-700">Direcci&oacute;n
                             <span class="text-red-500">*</span>
                         </label>
@@ -87,7 +87,7 @@
                         </p>
                         <x-jet-input-error for="shippingaddress" />
                     </div>
-                    <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                         <label for="region" class="block text-sm font-medium text-gray-700">Otros detalles de direccion
                             <span class="text-red-500">*</span>
                         </label>
