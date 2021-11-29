@@ -26,12 +26,11 @@ class CategoryController extends Controller
     public function store($slug)
     {
 
-        $category = Category::where('slug',$slug)->get();
+        $brand = Brand::where('slug',$slug)->first();
 
-        $title = $category ->cname;
+        $title = $brand->bname;
 
         return view('category.index', compact('title'));
-
     }
 
     /**
@@ -42,9 +41,11 @@ class CategoryController extends Controller
      */
     public function show($slug)
     {
-        $brand = Brand::where('slug',$slug)->get();
+ 
 
-        $title = $brand -> bname;
+        $category = Category::where('slug',$slug)->first();
+
+        $title = $category ->cname;
 
         return view('category.index', compact('title'));
 

@@ -29,9 +29,9 @@
                     <p>{{ $product->description }}</p>
                     <dl class="row" id="features">
                         <dt class="col-sm-3">marca</dt>
-                        <dd class="col-sm-9"><a href="{{ $brand->slug }}">{{ $brand->bname }}</a></dd>
+                        <dd class="col-sm-9"><a href="{{ route('brands.band',$brand->slug) }}">{{ $brand->bname }}</a></dd>
                         <dt class="col-sm-3">categoria</dt>
-                        <dd class="col-sm-9"><a href="{{ $category->cname }}">{{ $category->cname }}</a></dd>
+                        <dd class="col-sm-9"><a href="{{ route('categories.category',$category->cname) }}">{{ $category->cname }}</a></dd>
                         <dt class="col-sm-3">sku</dt>
                         <dd class="col-sm-9">{{ $product->sku }}</dd>
                     </dl>

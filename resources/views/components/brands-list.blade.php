@@ -16,7 +16,7 @@
                                  <i class="fas fa-tshirt fa-4x text-warning"></i>
                             </div>
                             <figcaption class="info-wrap text-center">
-                                <h6 class="title text-truncate"><a href="#">{{$brand->bname}}</a></h6>
+                                <h6 class="title text-truncate"><a href="{{ route('brands.band', $brand->slug) }}">{{$brand->bname}}</a></h6>
                             </figcaption>
                         </figure> <!-- card // -->
                     </div>
