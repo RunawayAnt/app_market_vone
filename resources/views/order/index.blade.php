@@ -155,11 +155,14 @@
                                                 </p>
                                                 <div class="mt-3 space-y-4">
                                                     <div class="col-span-6 sm:col-span-3">
-                                                        <select id="paymentmethod" name="paymentmethod" autocomplete="paymentmethod"
+                                                        <select id="paymentmethod" name="paymentmethod"
+                                                            autocomplete="paymentmethod"
                                                             class="mt-1 block w-60 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                                             <option value="" selected>Seleccione pago</option>
-                                                            <option value="yape">Yape</option>
-                                                            <option value="mercadopago">Mercado Pago</option>
+                                                            @foreach ($payment as $item)
+                                                            <option value="{{$item->name}}">{{$item->name}}</option>
+                                                            {{-- <option value="mercadopago">Mercado Pago</option> --}}
+                                                            @endforeach
                                                         </select>
                                                     </div>
                                                 </div>

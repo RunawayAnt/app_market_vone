@@ -59,3 +59,5 @@ Route::get('usuario/datos-personales', [ProfileController::class, 'index'])->mid
 Route::get('order/comprobar-datos', [OrderController::class, 'index'])->middleware('can:client.order')->name('client.order');
 
 Route::post('order/pago-producto', [OrderController::class, 'store'])->middleware('can:client.order')->name('client.order.delivery');
+
+Route::post('order/pago-realizado', [OrderController::class, 'confirmPay'])->middleware('can:client.order')->name('client.order.confirm');

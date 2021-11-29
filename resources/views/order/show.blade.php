@@ -56,25 +56,40 @@
                                     @endif
                                 </dl>
                             </article> <!-- card-body.// -->
+                            <article class="card-body border-top">
+                                <dl class="row">
+                                    <dt class="col-sm-10">Metodo de pago:</dt>
+                                    <dd class="col-sm-2 text-right"><strong>{{ $methodpayment[0]->name }}</strong>
+                                    </dd>
+                                </dl>
+                                <dl class="row">
+                                    <dt class="col-sm-6">Datos de transferencia:</dt>
+                                    <dd class="col-sm-6 text-right">{{ $methodpayment[0]->description }}</dd>
+                                </dl>
+                                <form action="{{ route('client.order.confirm') }}" method="post"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <dl class="row mt-5">
+                                        <dt class="col-sm-6">Abjuntar comprobante:</dt>
+                                        <dd class="col-sm-6 text-right">
+                                            <input type="file" name="image" accept="image/*">
+                                            <x-jet-input-error for="image" />
+
+                                            <input type="hidden" name="delivery" value="{{$delivery}}">
+                                            <input type="hidden" name="pricedelivery" value="{{$pricedelivery}}">
+                                            <input type="hidden" name="methodpayment" value="{{$methodpayment[0]->name}}">
+                                        </dd>
+                                    </dl>
+                                    <dl class="row mt-4">
+                                        <dt class="col-sm-6"></dt>
+                                        <dd class="col-sm-6 text-right">
+                                            <button type="submit" class="btn btn-dark">Confirmar pago</button>
+                                        </dd>
+                                    </dl>
+                                </form>
+                            </article> <!-- card-body.// -->
                         </div> <!-- card.// -->
                         <!-- ============================ COMPONENT 3  ================================= -->
-                    </aside> <!-- col.// -->
-
-                    <aside class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="text-center mb-3">
-                                    <img src="" height="26">
-                                </p>
-                                @if ($methodpayment)
-                                    <a href="#" class="btn btn-primary btn-block">Pagar ahora </a>
-                                @else
-                                    <a href="#" class="btn btn-primary btn-block">Pagar ahora </a>
-                                @endif
-                                {{-- <a href="#" class="btn btn-light btn-block">Continue Shopping</a> --}}
-                            </div> <!-- card-body.// -->
-                        </div> <!-- card.// -->
-
                     </aside> <!-- col.// -->
                 </div>
             </div> <!-- container .//  -->
