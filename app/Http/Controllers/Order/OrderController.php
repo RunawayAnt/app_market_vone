@@ -10,14 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    // public $delivery = "deny", $paymentmethod;
-    // public $request = [];
+    public $user;
+    // public $customer;
 
-    // protected $rules = [
-    //     'delivery' => 'required',
-    //     'paymentmethod' => 'required'
-    // ];
-
+ 
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +21,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->id;
-        $customer = User::find($user)-> profile;
+        $this->user = Auth::user()->id;
+        $customer = User::find($this->user)->profile;
         return view('order.index', compact('customer'));
     }
 
@@ -48,7 +44,28 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'paymentmethod' => 'required'
+        ]);
+
+        $configprice = 9.00;
+
+        $products = \Cart::getContent();
+        $total = \Cart::getTotal();
+        $subtotal = \Cart::getSubTotal();
+        $delivery = $request->input('delivery') ? $request->input('delivery') : 'canceled';
+        $pricedelivery = $request->input('delivery') ? $configprice : 0.00;
+
+        $methodpayment = $request->input('paymentmethod');
+
+
+        // $request -> input('')
+
+        // return $request->input('paymentmethod');
+
+        
+
+        return view('order.show', compact('products', 'total', 'subtotal', 'delivery', 'pricedelivery','methodpayment'));
     }
 
     /**
@@ -59,32 +76,10 @@ class OrderController extends Controller
      */
 
 
-    // public function confirmdelivery()
-    // {
-    //     $this->delivery == 'deny' ? $this->delivery = "confirm" : $this->delivery;
-    // }
 
 
-    public function show($request)
+    public function show()
     {
-
-
-        // // public function mount()
-        // // {
-        // //     // $this->delivery = 'Negado';
-        // // }
-
-        //     $this->validate();
-
-        //     $data = [
-        //         'delivery' => $this->delivery,
-        //         'methodpay' => $this->paymentmethod
-        //     ];
-
-        //     // return route('client.order.delivery', $data);
-        //     // redirect()->route('client.order.delivery', compact('data'));
-        //     // $this->reset('delivery', 'paymentmethod');
-
     }
 
     /**

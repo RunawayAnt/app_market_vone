@@ -55,6 +55,7 @@ Route::get('categorias', [CategoryController::class, 'index'])->name('categories
 
 Route::get('usuario/datos-personales', [ProfileController::class, 'index'])->middleware('can:client.home')->name('client.profile');
 
+
 Route::get('order/comprobar-datos', [OrderController::class, 'index'])->middleware('can:client.order')->name('client.order');
 
-// Route::get('order/pago-producto/{request}', [OrderController::class, 'show'])->middleware('can:client.order')->name('client.order.delivery');
+Route::post('order/pago-producto', [OrderController::class, 'store'])->middleware('can:client.order')->name('client.order.delivery');
