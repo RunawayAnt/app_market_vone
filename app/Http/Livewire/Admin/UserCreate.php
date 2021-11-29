@@ -28,7 +28,7 @@ class UserCreate extends Component
         $user->assignRole($this->rol);
         $user->save();
 
-        $this->emitTo('user-index','render');
+        $this->emitTo('admin.user-index','render');
         $this->emit('alertusers');
 
         $this->reset(['name','email','password','password_confirm','rol']);

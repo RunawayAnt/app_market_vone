@@ -256,13 +256,22 @@ return [
             'icon' => 'fas fa-tachometer-alt',
         ],
 
-        ['header' => 'ADMINISTRAR'],
+        ['header' => 'USUARIOS Y ROLES'],
 
         [
             'text' => 'Usuarios',
             'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-users',
         ],
+
+        ['header' => 'PAGOS Y TRANSFERENCIAS'],
+
+        [
+            'text' => 'Metodos de Pago',
+            'route'  => 'admin.payment.index',
+            'icon' => 'fas fa-money-check',
+        ],
+
         // [
         //     'text' => 'change_password',
         //     'url'  => 'admin/settings',
