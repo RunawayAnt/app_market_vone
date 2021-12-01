@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="bg pb-5 pt-5">
-        <div class="max-w-7xl mx-auto py-2 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-5 sm:px-6 lg:px-8">
             <div class="mt-10 sm:mt-0">
                 <!-- This example requires Tailwind CSS v2.0+ -->
                 <div class="flex flex-col">

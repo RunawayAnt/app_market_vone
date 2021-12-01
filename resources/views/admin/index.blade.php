@@ -7,7 +7,10 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    {{-- {-- Minimal with title, text and icon --}}
+    <x-adminlte-info-box title="Usuarios Vendedores" text="3 usuarios vendedores registrados" icon="far fa-lg fa-star" />
+    {{-- {-- Minimal with title, text and icon --}} 
+    <x-adminlte-info-box title="Metodos de pago" text="1 metodo de pago agregado" icon="far fa-lg fa-star" />
 @stop
 
 @section('css')
@@ -15,5 +18,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        console.log('Hi!');
+    </script>
 @stop
